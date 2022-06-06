@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Parsmount2.Models.t3>
+
+@{
+    ViewBag.Title = "DisplayProduct2";
+}
+
+<h2>DisplayProduct2</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateProduct2")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cc2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cc3)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cc2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cc3)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cc1 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cc1 }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cc1 })
+        </td>
+    </tr>
+}
+
+</table>

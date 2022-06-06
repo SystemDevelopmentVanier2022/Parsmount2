@@ -19,7 +19,7 @@ namespace Parsmount2.Controllers
         [HttpGet]
         public ActionResult DisplayProduct()
         {
-            List < t1 > list = db.t1.OrderByDescending(x => x.c1).ToList();
+            List<t1> list = db.t1.OrderByDescending(x => x.c1).ToList();
             return View(list);
         }
 
@@ -38,5 +38,27 @@ namespace Parsmount2.Controllers
         }
 
 
+
+
+        [HttpGet]
+        public ActionResult DisplayProduct2()
+        {
+            List<t3> list = db.t3.OrderByDescending(x => x.cc1).ToList();
+            return View(list);
+        }
+
+        [HttpGet]
+        public ActionResult CreateProduct2()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateProduct2(t3 pro)
+        {
+            db.t3.Add(pro);
+            db.SaveChanges();
+            return RedirectToAction("DisplayProduct2");
+        }
     }
 }

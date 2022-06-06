@@ -26,5 +26,6 @@ namespace Parsmount2.Models
         }
     
         public virtual DbSet<t1> t1 { get; set; }
+        public virtual DbSet<t3> t3 { get; set; }
     }
 }

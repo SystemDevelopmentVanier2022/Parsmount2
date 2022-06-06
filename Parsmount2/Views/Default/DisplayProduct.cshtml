@@ -7,19 +7,17 @@
 <h2>DisplayProduct</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateProduct", "t1",new { @class = "btn btn.primary" })
+    @Html.ActionLink("Create New", "CreateProduct")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Product Name")
+            @Html.DisplayNameFor(model => model.c2)
         </th>
         <th>
-            @Html.DisplayName("Product Quantity")
+            @Html.DisplayNameFor(model => model.c3)
         </th>
-        <th>
-            @Html.DisplayName("Actions")
-        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -31,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.c3)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.c1 }, new {@class="btn.primary"}) |
-            @Html.ActionLink("Details", "Details", new { id=item.c1 }, new { @class = "btn.success" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.c1 }, new { @class = "btn.danger" })
+            @Html.ActionLink("Edit", "Edit", new { id=item.c1 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.c1 }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.c1 })
         </td>
     </tr>
 }

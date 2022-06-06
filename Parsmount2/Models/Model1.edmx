@@ -20,8 +20,17 @@ warning 6013: The table/view 'test1.dbo.t2' does not have a primary key defined 
           <Property Name="cc2" Type="int" />
           <Property Name="cc3" Type="text" />
         </EntityType>-->
+        <EntityType Name="t3">
+          <Key>
+            <PropertyRef Name="cc1" />
+          </Key>
+          <Property Name="cc1" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cc2" Type="int" />
+          <Property Name="cc3" Type="text" />
+        </EntityType>
         <EntityContainer Name="test1ModelStoreContainer">
           <EntitySet Name="t1" EntityType="Self.t1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t3" EntityType="Self.t3" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -36,8 +45,17 @@ warning 6013: The table/view 'test1.dbo.t2' does not have a primary key defined 
           <Property Name="c2" Type="Int32" />
           <Property Name="c3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="t3">
+          <Key>
+            <PropertyRef Name="cc1" />
+          </Key>
+          <Property Name="cc1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cc2" Type="Int32" />
+          <Property Name="cc3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityContainer Name="test1Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="t1" EntityType="Self.t1" />
+          <EntitySet Name="t3" EntityType="Self.t3" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -51,6 +69,15 @@ warning 6013: The table/view 'test1.dbo.t2' does not have a primary key defined 
                 <ScalarProperty Name="c1" ColumnName="c1" />
                 <ScalarProperty Name="c2" ColumnName="c2" />
                 <ScalarProperty Name="c3" ColumnName="c3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t3">
+            <EntityTypeMapping TypeName="test1Model.t3">
+              <MappingFragment StoreEntitySet="t3">
+                <ScalarProperty Name="cc1" ColumnName="cc1" />
+                <ScalarProperty Name="cc2" ColumnName="cc2" />
+                <ScalarProperty Name="cc3" ColumnName="cc3" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
