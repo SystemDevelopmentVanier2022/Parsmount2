@@ -214,6 +214,7 @@
     <Content Include="Views\Default\DisplayProduct.cshtml" />
     <Content Include="Views\Default\CreateProduct2.cshtml" />
     <Content Include="Views\Default\DisplayProduct2.cshtml" />
+    <Content Include="Views\Default\UpdateProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

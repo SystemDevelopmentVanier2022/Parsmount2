@@ -60,5 +60,22 @@ namespace Parsmount2.Controllers
             db.SaveChanges();
             return RedirectToAction("DisplayProduct2");
         }
-    }
+
+        [HttpGet]
+        public ActionResult UpdateProduct(int id)
+        {
+            t1 pr = db.t1.Where(x => x.c1 == id).SingleOrDefault();
+            return View(pr);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateProduct(int id, t1 pro)
+        {
+            t1 pr = db.t1.Where(x => x.c1 == id).SingleOrDefault();
+            pr.c2 = pro.c2;
+            pr.c3 = pro.c3;
+            db.SaveChanges();
+            return RedirectToAction("DisplayProduct");
+        }
+    }    
 }
